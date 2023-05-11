@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Linq;
-using System.Security.Cryptography;
-using System.Security.Cryptography.X509Certificates;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MaquinaDeDoces
 {
@@ -23,36 +16,38 @@ namespace MaquinaDeDoces
         //Método construtor
         public Produto()
         {
-            ModificarCodigo       = 0;
-            ModificarNome         = "";
-            ModificarDescricao    = "";
-            ModificarPreco        = 0;
-            ModificarQuantidade   = 0;
+            ModificarCodigo = 0;
+            ModificarNome = "";
+            ModificarDescricao = "";
+            ModificarPreco = 0;
+            ModificarQuantidade = 0;
             ModificarDataValidade = new DateTime();//0000/00/00 00:00:00
-            ModificarSituacao     = false;
+            ModificarSituacao = false;
         }//fim do método construtor
 
         public Produto(int codigo, string nome, string descricao,
             double preco, int quantidade, DateTime dtValidade, Boolean situacao)
         {
-            ModificarCodigo       = codigo;
-            ModificarNome         = nome;
-            ModificarDescricao    = descricao;
-            ModificarPreco        = preco;
-            ModificarQuantidade   = quantidade;
+            ModificarCodigo = codigo;
+            ModificarNome = nome;
+            ModificarDescricao = descricao;
+            ModificarPreco = preco;
+            ModificarQuantidade = quantidade;
             ModificarDataValidade = dtValidade;
-            ModificarSituacao     = situacao;
+            ModificarSituacao = situacao;
         }//fim do método construtor com parâmetros
 
         //Métodos Get e Set
         //Métodos de acesso e modificação
         public int ModificarCodigo
         {
-            get{
+            get
+            {
                 return this.codigo;
             }//fim do get - retornar o código
 
-            set{
+            set
+            {
                 this.codigo = value;
             }//fim do set - modificar o código
         }//fim do ModificarCodigo
@@ -66,7 +61,7 @@ namespace MaquinaDeDoces
         public string ModificarDescricao
         {
             get { return this.descricao; }
-            set { this.descricao = value;}
+            set { this.descricao = value; }
         }//fim do ModificarDescricao
 
         public double ModificarPreco
@@ -77,8 +72,8 @@ namespace MaquinaDeDoces
 
         public int ModificarQuantidade
         {
-            get { return this.quantidade;}
-            set { this.quantidade = value;}
+            get { return this.quantidade; }
+            set { this.quantidade = value; }
         }//fim do ModificarQuantidade
 
         public DateTime ModificarDataValidade
@@ -97,13 +92,13 @@ namespace MaquinaDeDoces
         public void CadastrarProduto(int codigo, string nome, string descricao,
         double preco, int quantidade, DateTime dtValidade, Boolean situacao)
         {
-            ModificarCodigo       = codigo;
-            ModificarNome         = nome;
-            ModificarDescricao    = descricao;
-            ModificarPreco        = preco; 
-            ModificarQuantidade   = quantidade;
-            ModificarDataValidade = dtValidade;  
-            ModificarSituacao     = situacao;    
+            ModificarCodigo = codigo;
+            ModificarNome = nome;
+            ModificarDescricao = descricao;
+            ModificarPreco = preco;
+            ModificarQuantidade = quantidade;
+            ModificarDataValidade = dtValidade;
+            ModificarSituacao = situacao;
         }//fim do método CadastrarProduto
 
         //Consultar Produto
@@ -111,15 +106,15 @@ namespace MaquinaDeDoces
         {
             string msg = "";//Criando uma variável local
 
-            if(ModificarCodigo == codigo)
+            if (ModificarCodigo == codigo)
             {
-                msg = "\nCódigo: "           + ModificarCodigo       +
-                      "\nNome: "             + ModificarNome         +
-                      "\nDescrição: "        + ModificarDescricao    +
-                      "\nPreço: "            + ModificarPreco        +
-                      "\nQuantidade: "       + ModificarQuantidade   +
+                msg = "\nCódigo: " + ModificarCodigo +
+                      "\nNome: " + ModificarNome +
+                      "\nDescrição: " + ModificarDescricao +
+                      "\nPreço: " + ModificarPreco +
+                      "\nQuantidade: " + ModificarQuantidade +
                       "\nData de Validade: " + ModificarDataValidade +
-                      "\nSituação: "         + ModificarSituacao;
+                      "\nSituação: " + ModificarSituacao;
             }
             else
             {
@@ -134,7 +129,7 @@ namespace MaquinaDeDoces
         {
             Boolean flag = false;//Variável local
 
-            if(ModificarCodigo == codigo)
+            if (ModificarCodigo == codigo)
             {
                 switch (campo)
                 {
@@ -174,9 +169,9 @@ namespace MaquinaDeDoces
         {
             Boolean flag = false;
 
-            if(ModificarCodigo == codigo)
+            if (ModificarCodigo == codigo)
             {
-                if(ModificarSituacao == true)
+                if (ModificarSituacao == true)
                 {
                     ModificarSituacao = false;
                 }

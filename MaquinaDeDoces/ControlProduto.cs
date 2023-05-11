@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MaquinaDeDoces
 {
@@ -11,8 +7,8 @@ namespace MaquinaDeDoces
         Produto prod;
         private int opcao;
 
-        public ControlProduto() 
-        { 
+        public ControlProduto()
+        {
             prod = new Produto();
             ModificarOpcao = -1;
         }// fim construtor
@@ -26,11 +22,11 @@ namespace MaquinaDeDoces
 
         public void Menu()
         {
-            Console.WriteLine("Escolha uma das opções abaixo: \n"  +
-                              "0. Sair\n"                          +   
-                              "1. Cadastrar um produto\n"          +
-                              "2. Consultar um produto\n"          +
-                              "3. Atualizar um produto\n"         +
+            Console.WriteLine("Escolha uma das opções abaixo: \n" +
+                              "0. Sair\n" +
+                              "1. Cadastrar um produto\n" +
+                              "2. Consultar um produto\n" +
+                              "3. Atualizar um produto\n" +
                               "4. Mudar situação\n");
             ModificarOpcao = Convert.ToInt32(Console.ReadLine());
         }// fim do metodo menu
@@ -38,37 +34,37 @@ namespace MaquinaDeDoces
         //Realizar a Operação
         public void Operacao()
         {
-        do         
-        {
-            Menu();//Mostrando o Menu na tela
-            switch(ModificarOpcao)
+            do
             {
-                case 0:
-                    Console.WriteLine("Obrigado!");
-                    Console.Clear();//Limpa tela
-                    break;
-                case 1:
-                    ColetarDados();
-                    Console.Clear();//Limpa tela
-                    break;
-                case 2:
-                    Consultar();
-                    Console.Clear();//Limpa tela
-                    break;
-                case 3:
-                    Atualizar();
-                    Console.Clear();//Limpa tela
-                    break;
-                case 4:
-                    AlterarSituacao();
-                    Console.Clear();//Limpa tela
-                    break;
-                default:
-                    Console.WriteLine("Opção escolhida não é válida!");
-                    Console.Clear();//Limpa tela
-                    break;
-            }//fim do switch
-        } while (ModificarOpcao != 0);
+                Menu();//Mostrando o Menu na tela
+                switch (ModificarOpcao)
+                {
+                    case 0:
+                        Console.WriteLine("Obrigado!");
+                        Console.Clear();//Limpa tela
+                        break;
+                    case 1:
+                        ColetarDados();
+                        Console.Clear();//Limpa tela
+                        break;
+                    case 2:
+                        Consultar();
+                        Console.Clear();//Limpa tela
+                        break;
+                    case 3:
+                        Atualizar();
+                        Console.Clear();//Limpa tela
+                        break;
+                    case 4:
+                        AlterarSituacao();
+                        Console.Clear();//Limpa tela
+                        break;
+                    default:
+                        Console.WriteLine("Opção escolhida não é válida!");
+                        Console.Clear();//Limpa tela
+                        break;
+                }//fim do switch
+            } while (ModificarOpcao != 0);
         }//fim do metodo Operacao
 
 
@@ -101,12 +97,12 @@ namespace MaquinaDeDoces
             Boolean situacao = Convert.ToBoolean(Console.ReadLine());
 
             //Cadastrar Produto
-            prod.CadastrarProduto(codigo, nome, descricao, preco,quantidade, data, situacao);
+            prod.CadastrarProduto(codigo, nome, descricao, preco, quantidade, data, situacao);
             Console.WriteLine("Dado Registrado!");
         }//fim do coletarDados
 
-         //Consultar
-         public void Consultar()
+        //Consultar
+        public void Consultar()
         {
             //Consultar os dados do produto
             Console.WriteLine("\n\n\nInforme o código do produto que deseja consultar");
@@ -118,9 +114,9 @@ namespace MaquinaDeDoces
 
         public void Atualizar()
         {
-        //Atualizar Produto
-        Console.WriteLine("\n\nInforme o código do produto que deseja atualizar: ");
-        int codigo = Convert.ToInt32(Console.ReadLine());
+            //Atualizar Produto
+            Console.WriteLine("\n\nInforme o código do produto que deseja atualizar: ");
+            int codigo = Convert.ToInt32(Console.ReadLine());
 
             short campo = 0;
 
@@ -135,7 +131,7 @@ namespace MaquinaDeDoces
                     "6. Situação\n");
                 campo = Convert.ToInt16(Console.ReadLine());
                 //Avisar o usuário
-                if((campo < 1) || (campo > 6))
+                if ((campo < 1) || (campo > 6))
                 {
                     Console.WriteLine("Erro, escolha um código entre 1 e 6");
                 }

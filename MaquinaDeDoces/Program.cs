@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MaquinaDeDoces
 {
@@ -16,7 +12,7 @@ namespace MaquinaDeDoces
             //Chamar o metodo principal daquela classe
             controlprod.Operacao();
 
-           Console.ReadLine();//Manter janela aberta
+            Console.ReadLine();//Manter janela aberta
         }//fim do método main
     }//fim da classe
 }//fim do projeto
